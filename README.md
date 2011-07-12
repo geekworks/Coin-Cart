@@ -1,0 +1,1 @@
+Coin Cart - Bitcoin powered shopping cart (PHP/MySQL)
