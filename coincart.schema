@@ -1,0 +1,49 @@
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `btcbodega`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `niche`
+--
+
+CREATE TABLE IF NOT EXISTS `niche` (
+  `id` int(16) NOT NULL auto_increment,
+  `name` varchar(255) NOT NULL default '',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order`
+--
+
+CREATE TABLE IF NOT EXISTS `order` (
+  `id` int(16) NOT NULL auto_increment,
+  `ip` varchar(15) collate utf8_unicode_ci NOT NULL default '',
+  `product` int(16) NOT NULL default '0',
+  `refund_to` varchar(255) collate utf8_unicode_ci NOT NULL default '',
+  `ship_to` varchar(255) collate utf8_unicode_ci NOT NULL default '',
+  `transaction_number` int(16) NOT NULL default '0',
+  `transaction_time` datetime NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product`
+--
+
+CREATE TABLE IF NOT EXISTS `product` (
+  `id` int(16) NOT NULL auto_increment,
+  `niche` int(16) NOT NULL default '0',
+  `name` varchar(255) NOT NULL default '',
+  `price` decimal(10,8) NOT NULL default '0.00000000',
+  `active` tinyint(1) NOT NULL default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
